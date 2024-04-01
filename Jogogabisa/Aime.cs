@@ -7,4 +7,4 @@ public  class Aime: Gatinhos
         nomedafoto= "aime.jpg";
 
     }
-    }
+    } 
