@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Jogogabisa.MainPage">
+             x:Class="Jogogabisa.MainPage"
+             Shell.NavBarIsVisible="False">
     
 <Grid>
  <Image x:Name="fotosdogato"
@@ -12,6 +13,12 @@
                HeightRequest="50"
                WidthRequest="50"
                HorizontalOptions= "End"
-               VerticalOptions ="Center"/>
-  </Grid>             
+               VerticalOptions ="End"/>
+  <ImageButton Source = "setabuttondois.jpg"
+               Clicked = "trocarclicadodois"
+               HeightRequest="50"
+               WidthRequest="50"
+               HorizontalOptions= "Start"
+               VerticalOptions ="End"/>
+  </Grid>        
 </ContentPage>

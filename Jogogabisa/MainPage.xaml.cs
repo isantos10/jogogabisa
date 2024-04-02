@@ -27,5 +27,15 @@ public partial class MainPage : ContentPage
 		     atual = aime;
 		fotosdogato.Source = atual.GetNomeDaFoto();
 	}
+	void trocarclicadodois(object sender, EventArgs args)
+	{
+		if (atual == liz)
+			atual = theo;
+		else if (atual == theo)
+			atual = aime;
+		else if (atual == aime)
+		     atual = liz;
+		fotosdogato.Source = atual.GetNomeDaFoto();
+	}
 }
 
