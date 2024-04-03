@@ -20,5 +20,35 @@
                WidthRequest="50"
                HorizontalOptions= "Start"
                VerticalOptions ="End"/>
+  <Frame 
+         x:Name = "botao"
+         Padding = "8"
+         WidthRequest = "60"
+         BackgroundColor = "#f0f4fa"
+         CornerRadius = "30"
+         Margin = "5, 200, 5, 200"
+         HorizontalOptions = "Start"
+         VerticalOptions = "Center">
+   <Grid> 
+       <Grid.RowDefinitions>
+       <RowDefinition Height = "*"/>
+       <RowDefinition Height = "*"/>
+       <RowDefinition Height = "*"/>
+       </Grid.RowDefinitions>
+   
+      <ImageButton 
+                   Source = "banhocats.png"
+                   Grid.Row = "0"/>
+      
+      <ImageButton 
+                   Source = "brinquedocats.png"
+                   Grid.Row = "1"/>
+      
+      <ImageButton 
+                   Source = "racaocats.png"
+                   Grid.Row = "2"/>
+    
+   </Grid>       
+   </Frame>         
   </Grid>        
 </ContentPage>
