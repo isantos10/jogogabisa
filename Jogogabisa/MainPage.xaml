@@ -47,8 +47,57 @@
       <ImageButton 
                    Source = "racaocats.png"
                    Grid.Row = "2"/>
-    
-   </Grid>       
-   </Frame>         
+    </Grid>       
+   </Frame>      
+     <Frame x:Name="barras" 
+            Padding="4"
+            BackgroundColor="#f0f4fa"
+            CornerRadius="30"
+            Margin="6,5,6,5"
+            HeightRequest="170"
+            VerticalOptions="Start">
+             
+             <Grid>
+             <Grid.RowDefinitions>
+             <RowDefinition Height="*"/>
+             <RowDefinition Height="*"/>
+             <RowDefinition Height="*"/>
+             </Grid.RowDefinitions>
+
+             <Grid.ColumnDefinitions>
+              <ColumnDefinition Width= "40"/>
+              <ColumnDefinition Width= "*"/>
+             </Grid.ColumnDefinitions>
+     <Image 
+            Source="racaocats.png"
+            Grid.Row="0"
+            Grid.Column="0"/>
+
+     <Image
+            Source="banhocats.png"
+            Grid.Row="1"
+            Grid.Column="0"/>
+
+     <Image 
+            Source="brinquedocats.png"
+            Grid.Row="2"
+            Grid.Column="0"/>
+      
+     <ProgressBar x:Name="progressoFome"
+                  Progress="0.5"
+                  Grid.Row="0"
+                  Grid.Column="1"/>
+
+     <ProgressBar x:Name="progressoBanho"
+                  Progress="0.5"
+                  Grid.Row="1"
+                  Grid.Column="1"/>
+
+      <ProgressBar x:Name="progressoFeliz"
+                   Progress="0.5"
+                   Grid.Row="2"
+                   Grid.Column="1"/>   
+     </Grid>
+    </Frame>
   </Grid>        
 </ContentPage>
