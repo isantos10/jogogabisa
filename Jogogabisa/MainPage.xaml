@@ -38,19 +38,22 @@
    
       <ImageButton 
                    Source = "banhocats.png"
-                   Grid.Row = "0"/>
+                   Grid.Row = "0"
+                   Clicked = "botaobanho"/>
       
       <ImageButton 
                    Source = "brinquedocats.png"
-                   Grid.Row = "1"/>
+                   Grid.Row = "1"
+                   Clicked = "botaobrinquedo"/>
       
       <ImageButton 
                    Source = "racaocats.png"
-                   Grid.Row = "2"/>
+                   Grid.Row = "2"
+                   Clicked = "botaofome"/>
     </Grid>       
    </Frame>      
      <Frame x:Name="barras" 
-            Padding="4"
+            Padding="10, 4"
             BackgroundColor="#f0f4fa"
             CornerRadius="30"
             Margin="6,5,6,5"

@@ -37,5 +37,16 @@ public partial class MainPage : ContentPage
 		     atual = liz;
 		fotosdogato.Source = atual.GetNomeDaFoto();
 	}
+
+	void AtualizaBarras()
+	{
+		progressoFome.Progress=atual.GetFome();
+		progressoBanho.Progress=atual.GetBanho();
+		progressoFeliz.Progress=atual.GetAlegria();
+	}
+	void botaobanho(object sender, EventArgs args)
+	{
+		atual.SetBanho (atual.GetBanho() + 0,1);
+		
 }
 
