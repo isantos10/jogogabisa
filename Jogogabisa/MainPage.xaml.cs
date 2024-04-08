@@ -1,4 +1,6 @@
-﻿namespace Jogogabisa;
+﻿using Microsoft.Maui.Controls;
+
+namespace Jogogabisa;
 
 public partial class MainPage : ContentPage
 {
@@ -15,6 +17,12 @@ public partial class MainPage : ContentPage
         liz  = new Liz();
 		atual = aime;
 		fotosdogato.Source= atual.GetNomeDaFoto();
+		AtualizaBarras();
+		var timer=Application.Current.Dispatcher.CreateTimer();
+		timer.Interval=TimeSpan.FromSeconds(10);
+		timer.Tick+=(s,e)=>
+		PassouTempo();
+		timer.Start();
 	}
 
 	void trocarclicado(object sender, EventArgs args)
@@ -36,6 +44,7 @@ public partial class MainPage : ContentPage
 		else if (atual == aime)
 		     atual = liz;
 		fotosdogato.Source = atual.GetNomeDaFoto();
+		AtualizaBarras();
 	}
 
 	void AtualizaBarras()
@@ -57,7 +66,13 @@ public partial class MainPage : ContentPage
 	void botaofome(object sender, EventArgs args)
 	{
 		atual.SetFome (atual.GetFome() + 0.1);
-		AtualizaBarras();
+      
     }
-
+    void PassouTempo()
+	{
+	    atual.SetAlegria (atual.GetAlegria() - 0.1);
+		atual.SetBanho (atual.GetBanho() - 0.1);
+	    atual.SetFome (atual.GetFome() - 0.1);
+		AtualizaBarras();
+	}
 }
