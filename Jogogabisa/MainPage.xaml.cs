@@ -46,7 +46,18 @@ public partial class MainPage : ContentPage
 	}
 	void botaobanho(object sender, EventArgs args)
 	{
-		atual.SetBanho (atual.GetBanho() + 0,1);
-		
-}
+		atual.SetBanho (atual.GetBanho() + 0.1);
+		AtualizaBarras();
+    }
+    void botaobrinquedo(object sender, EventArgs args)
+	{
+		atual.SetAlegria (atual.GetAlegria() + 0.1);
+		AtualizaBarras();
+    }
+	void botaofome(object sender, EventArgs args)
+	{
+		atual.SetFome (atual.GetFome() + 0.1);
+		AtualizaBarras();
+    }
 
+}
