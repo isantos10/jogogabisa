@@ -16,7 +16,7 @@ public  class Gatinhos
      public string GetNomeDaFoto()
      {
         if(morto)
-        return nomedafotomorto
+        return nomedafotomorto;
         else
         return nomedafoto;
      }
@@ -72,4 +72,8 @@ public  class Gatinhos
      {
        return Alegria;
      }
+      public bool GetMorto()
+    {
+      return morto;
+    }
     }

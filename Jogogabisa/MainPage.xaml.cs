@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Controls;
+﻿using System.Reflection;
+using Microsoft.Maui.Controls;
 
 namespace Jogogabisa;
 
@@ -8,6 +9,7 @@ public partial class MainPage : ContentPage
 	Theo theo;
     Liz  liz;
 	Gatinhos atual;
+	IDispatcherTimer timer;
 
 	public MainPage()
 	{
@@ -18,7 +20,7 @@ public partial class MainPage : ContentPage
 		atual = aime;
 		fotosdogato.Source= atual.GetNomeDaFoto();
 		AtualizaBarras();
-		var timer=Application.Current.Dispatcher.CreateTimer();
+		 timer=Application.Current.Dispatcher.CreateTimer();
 		timer.Interval=TimeSpan.FromSeconds(10);
 		timer.Tick+=(s,e)=>
 		PassouTempo();
@@ -34,6 +36,15 @@ public partial class MainPage : ContentPage
 		else if (atual == liz)
 		     atual = aime;
 		fotosdogato.Source = atual.GetNomeDaFoto();
+
+		if (atual.GetMorto())
+		{
+			botao.IsVisible=false;
+		}
+		else 
+		{
+			botao.IsVisible=true;
+		}
 	}
 	void trocarclicadodois(object sender, EventArgs args)
 	{
@@ -44,6 +55,15 @@ public partial class MainPage : ContentPage
 		else if (atual == aime)
 		     atual = liz;
 		fotosdogato.Source = atual.GetNomeDaFoto();
+
+		if (atual.GetMorto())
+		{
+			botao.IsVisible=false;
+		}
+		else 
+		{
+			botao.IsVisible=true;
+		}
 		AtualizaBarras();
 	}
 
@@ -70,9 +90,19 @@ public partial class MainPage : ContentPage
     }
     void PassouTempo()
 	{
+		var estavaMorto= atual.GetMorto();
 	    atual.SetAlegria (atual.GetAlegria() - 0.1);
 		atual.SetBanho (atual.GetBanho() - 0.1);
 	    atual.SetFome (atual.GetFome() - 0.1);
 		AtualizaBarras();
+		if (estavaMorto !=atual.GetMorto())
+		{
+			fotosdogato.Source=atual.GetNomeDaFoto();
+			botao.IsVisible=false;
+			barras.IsVisible=false;
+			timer.Stop();
+		}
+		
 	}
+
 }
