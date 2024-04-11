@@ -1,7 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.Maui.Controls;
-
-namespace Jogogabisa;
+﻿namespace Jogogabisa;
 
 public partial class MainPage : ContentPage
 {
@@ -40,10 +37,12 @@ public partial class MainPage : ContentPage
 		if (atual.GetMorto())
 		{
 			botao.IsVisible=false;
+			barras.IsVisible=false;
 		}
 		else 
 		{
 			botao.IsVisible=true;
+			barras.IsVisible=true;
 		}
 	}
 	void trocarclicadodois(object sender, EventArgs args)
@@ -59,10 +58,13 @@ public partial class MainPage : ContentPage
 		if (atual.GetMorto())
 		{
 			botao.IsVisible=false;
+			barras.IsVisible=false;
+
 		}
 		else 
 		{
 			botao.IsVisible=true;
+			barras.IsVisible=true;
 		}
 		AtualizaBarras();
 	}
@@ -91,9 +93,15 @@ public partial class MainPage : ContentPage
     void PassouTempo()
 	{
 		var estavaMorto= atual.GetMorto();
-	    atual.SetAlegria (atual.GetAlegria() - 0.1);
-		atual.SetBanho (atual.GetBanho() - 0.1);
-	    atual.SetFome (atual.GetFome() - 0.1);
+	    theo.SetAlegria (theo.GetAlegria() - 0.1);
+		theo.SetBanho (theo.GetBanho() - 0.1);
+	    theo.SetFome (theo.GetFome() - 0.1);
+		liz.SetAlegria (liz.GetAlegria() - 0.1);
+		liz.SetBanho (liz.GetBanho() - 0.1);
+	    liz.SetFome (liz.GetFome() - 0.1);
+		aime.SetAlegria (aime.GetAlegria() - 0.1);
+		aime.SetBanho (aime.GetBanho() - 0.1);
+	    aime.SetFome (aime.GetFome() - 0.1);
 		AtualizaBarras();
 		if (estavaMorto !=atual.GetMorto())
 		{
@@ -102,7 +110,13 @@ public partial class MainPage : ContentPage
 			barras.IsVisible=false;
 			timer.Stop();
 		}
-		
+		if (theo.GetMorto()&&
+		    aime.GetMorto()&&
+			liz.GetMorto())
+			{
+				Application.Current.MainPage = new gameoverPage();
+				timer.Stop();
+			}
 	}
 
 }

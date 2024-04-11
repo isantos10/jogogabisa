@@ -6,8 +6,8 @@ public  class Liz: Gatinhos
     {
         nomedafoto= "liz.jpg";
         nomedafotomorto="morteliz.png";
-        Fome=0.01;
-        Banho=0.06;
-        Alegria=0.3;
+        Fome=0.8;
+        Banho=0.8;
+        Alegria=0.8;
     }
     }

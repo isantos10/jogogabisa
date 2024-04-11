@@ -6,8 +6,8 @@ public  class Theo: Gatinhos
     {
         nomedafoto= "theo.jpg";
         nomedafotomorto= "mortetheo.png";
-         Fome=0.01;
-        Banho=0.06;
-        Alegria=0.3;
+         Fome=0.7;
+        Banho=0.7;
+        Alegria=0.7;
     }
     }
